@@ -138,24 +138,24 @@ infantry.addMoveSpeed(technologyName: "護衛技術", unitName: infantry.name, i
 infantry.addPrefix(toName: "精銳")
 infantry.die()
 
-let archr = MilitaryUnit()
-archr.civilization = "緬甸"
-archr.name = "飛鏢騎兵"
-archr.description = "是緬甸的特殊單位，屬於馬弓騎兵，傷害力極高。"
-archr.hp = 60
-archr.attack = 17
-archr.meleeDefense = 0
-archr.rangedDefense = 1
-archr.rangeFire = 5
-archr.sightRange = 5
-archr.attackSpeed = 2.03
-archr.moveSpeed = 1.3
+let archer = MilitaryUnit()
+archer.civilization = "緬甸"
+archer.name = "飛鏢騎兵"
+archer.description = "是緬甸的特殊單位，屬於馬弓騎兵，傷害力極高。"
+archer.hp = 60
+archer.attack = 17
+archer.meleeDefense = 0
+archer.rangedDefense = 1
+archer.rangeFire = 5
+archer.sightRange = 5
+archer.attackSpeed = 2.03
+archer.moveSpeed = 1.3
 
-archr.getDescription()
-archr.cost(food: 0, wood: 75, gold: 60, stone: 0)
-archr.addMoveSpeed(technologyName: "耕種技術", unitName: archr.name, increase: 0.1)
-archr.addPrefix(toName: "精銳")
-archr.die()
+archer.getDescription()
+archer.cost(food: 0, wood: 75, gold: 60, stone: 0)
+archer.addMoveSpeed(technologyName: "耕種技術", unitName: archer.name, increase: 0.1)
+archer.addPrefix(toName: "精銳")
+archer.die()
 
 
 // 測試用
@@ -185,3 +185,4 @@ archr.die()
 //        print("此單位升級為\(name)")
 //    }
 //}
+
