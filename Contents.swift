@@ -158,6 +158,80 @@ archer.addPrefix(toName: "精銳")
 archer.die()
 
 
+// 類別繼承（軍事建築）
+// 父類別 （建築）
+class Building {
+    var name: String = "建築名稱"
+    var description: String = "功能特色描述"
+    var hp: Int = 0
+    var sightRange: Int = 0
+    var buildingSize: Int = 0
+    
+    // 單位花費
+    func buildingCost(food: Int, wood: Int, gold: Int, stone: Int) -> String {
+        var buildingName = name
+        var costMessage = "該\(buildingName)所需耗費資源為"
+        if food != 0 {
+            costMessage = costMessage + "食物：\(food) "
+        }
+        if wood != 0 {
+            costMessage = costMessage + "木材：\(wood) "
+        }
+        if gold != 0 {
+            costMessage = costMessage + "黃金：\(gold) "
+        }
+        if stone != 0 {
+            costMessage = costMessage + "石頭：\(stone) "
+        }
+        let message = costMessage
+        print(message)
+        
+        return message
+    }
+    // 將單位屬性字串話
+    func getDescription() -> String {
+        let message = "建築名稱：\(name)\n功能特色：\(description)\n血量：\(hp)\n建築視野：\(sightRange)\n建築尺寸：：\(buildingSize)"
+        print(message)
+        
+        return message
+    }
+}
+
+// 子類別：軍事建築
+class MilitaryBuilding: Building {
+    var attack: Int = 0
+    var rangeFire: Int = 0
+    var shootingSpeed: Double = 0
+    
+    // 駐紮人口
+    func occupants(unitName: String, amount: Int) {
+        let message = "目前有 \(amount) 名人口駐紮在此 \(unitName)。"
+        print(message)
+    }
+    
+    func militaryBuildingDescription() {
+        let message = "攻擊：\(attack)\n射程：\(rangeFire)\n射速：\(shootingSpeed)"
+        print(message)
+
+    }
+
+    
+}
+
+let castle = MilitaryBuilding()
+castle.name = "城堡"
+castle.description = "能夠在城堡時代建築，提供強大的防禦"
+castle.hp = 4800
+castle.sightRange = 11
+castle.buildingSize = 16
+castle.attack = 11
+castle.rangeFire = 8
+castle.shootingSpeed = 2.03
+castle.getDescription()
+castle.militaryBuildingDescription()
+castle.buildingCost(food: 0, wood: 0, gold: 0, stone: 650)
+castle.occupants(unitName: castle.name, amount: 20)
+
 // 測試用
 //func getDescription() -> String {
 //    return "文明種族：\(civilization)\n單位名稱：\(name)\n單位描述：\(description)"
